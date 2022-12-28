@@ -514,6 +514,8 @@ webhook:
     - statuscheck
     - remotecluster
 
+  podAdmission:
+    enabled: true
 bpfki:
   # Enable chaos-kernel
   create: false

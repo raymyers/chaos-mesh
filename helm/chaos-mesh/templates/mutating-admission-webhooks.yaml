@@ -23,6 +23,7 @@
 {{- $supportTimeoutSeconds = true }}
 {{- end }}
 {{- $certManagerEnabled := .Values.webhook.certManager.enabled }}
+{{- $podAdmissionWebhookEnabled := .Values.webhook.podAdmission.enabled }}
 
 apiVersion: {{ $webhookApiVersion }}
 kind: MutatingWebhookConfiguration
@@ -36,6 +37,7 @@ metadata:
     cert-manager.io/inject-ca-from: {{ printf "%s/%s" .Release.Namespace "chaos-mesh-cert" | quote }}
   {{- end }}
 webhooks:
+  {{- if $podAdmissionWebhookEnabled }}
   - name: {{ template "chaos-mesh.webhook" . }}
     {{- if $supportTimeoutSeconds }}
     timeoutSeconds: {{ $timeoutSeconds }}
@@ -63,6 +65,7 @@ webhooks:
       matchLabels:
         admission-webhook: enabled
     failurePolicy: {{ .Values.webhook.FailurePolicy }}
+  {{- end }}
   {{- range $crd := .Values.webhook.CRDS }}
   - clientConfig:
       {{- if $certManagerEnabled }}
