@@ -15,6 +15,7 @@
  *
  */
 import GoogleIcon from '@mui/icons-material/Google'
+import KeyIcon from '@mui/icons-material/Key'
 import { Box, Button, Divider, IconButton, Link, Typography } from '@mui/material'
 import { Stale } from 'api/queryUtils'
 import { useGetCommonConfig } from 'openapi'
@@ -27,6 +28,8 @@ import Space from '@ui/mui-extends/esm/Space'
 import RBACGenerator from 'components/RBACGenerator'
 import i18n from 'components/T'
 import Token from 'components/Token'
+
+import { OidcAuthService } from '../../oidc/OidcAuthService'
 
 interface AuthProps {
   open: boolean
@@ -51,6 +54,13 @@ const Auth: React.FC<AuthProps> = ({ open, setOpen }) => {
 
   const handleSubmitCallback = () => navigate(0)
   const handleAuthGCP = () => (window.location.href = '/api/auth/gcp/redirect')
+
+  const handleAuthOIDC = () => {
+    const oidcAuthService = new OidcAuthService()
+    return oidcAuthService.signin()
+    // window.location.href = '/api/auth/oidc/redirect'
+    // default is: login/callback
+  }
 
   return (
     <ConfirmDialog
@@ -84,6 +94,18 @@ const Auth: React.FC<AuthProps> = ({ open, setOpen }) => {
           </Box>
         </>
       )}
+      {
+        /*TODO: reference configuration for OIDC enablement*/ <>
+          <Divider sx={{ mt: 6, mb: 3, color: 'text.secondary', typography: 'body2' }}>
+            {i18n('settings.addToken.or')}
+          </Divider>
+          <Box textAlign="center">
+            <IconButton color="primary" onClick={handleAuthOIDC}>
+              <KeyIcon titleAccess="Open Id" />
+            </IconButton>
+          </Box>
+        </>
+      }
 
       <ConfirmDialog
         open={tokenGenOpen}
