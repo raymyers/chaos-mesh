@@ -1,4 +1,4 @@
-// Copyright 2021 Chaos Mesh Authors.
+// Copyright 2023 Chaos Mesh Authors.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,14 +12,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-//go:build tools
 
-package tools
+package condition_test
 
 import (
-	_ "github.com/mgechev/revive"
-	_ "github.com/pingcap/failpoint/failpoint-ctl"
-	_ "github.com/swaggo/swag/cmd/swag"
-	_ "golang.org/x/tools/cmd/goimports"
-	_ "sigs.k8s.io/controller-tools/cmd/controller-gen"
+	"testing"
+
+	. "github.com/onsi/ginkgo/v2"
+	. "github.com/onsi/gomega"
 )
+
+func TestCondition(t *testing.T) {
+	RegisterFailHandler(Fail)
+	RunSpecs(t, "Condition Suite")
+}
