@@ -52,9 +52,9 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
 
   const handleAuthOIDC = () => {
     const oidcAuthService = new OidcAuthService()
-    return oidcAuthService.signin()
     // window.location.href = '/api/auth/oidc/redirect'
     // default is: login/callback
+    return oidcAuthService.signin()
   }
 
   return (
@@ -89,8 +89,8 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
           </Box>
         </>
       )}
-      {
-        /*TODO: reference configuration for OIDC enablement*/ <>
+      {config?.oidc_security_mode && (
+        <>
           <Divider sx={{ mt: 6, mb: 3, color: 'text.secondary', typography: 'body2' }}>
             {i18n('settings.addToken.or')}
           </Divider>
@@ -100,7 +100,7 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
             </IconButton>
           </Box>
         </>
-      }
+      )}
 
       <ConfirmDialog
         open={tokenGenOpen}

@@ -2395,6 +2395,10 @@ const docTemplate = `{
                     "type": "integer",
                     "default": 2333
                 },
+                "oidc_security_mode": {
+                    "type": "boolean",
+                    "default": false
+                },
                 "root_path": {
                     "type": "string",
                     "default": "http://localhost:2333"
