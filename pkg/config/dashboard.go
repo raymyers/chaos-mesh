@@ -46,6 +46,10 @@ type ChaosDashboardConfig struct {
 	GcpClientId     string `envconfig:"GCP_CLIENT_ID" default:"" json:"-"`
 	GcpClientSecret string `envconfig:"GCP_CLIENT_SECRET" default:"" json:"-"`
 
+	OidcSecurityMode bool   `envconfig:"OIDC_SECURITY_MODE" default:"false" json:"oidc_security_mode"`
+	OidcAuthority    string `envconfig:"OIDC_AUTHORITY" default:"" json:"-"`
+	OidcClientId     string `envconfig:"OIDC_CLIENT_ID" default:"" json:"-"`
+
 	RootUrl string `envconfig:"ROOT_URL" default:"http://localhost:2333" json:"root_path"`
 
 	// enableProfiling is a flag to enable pprof in controller-manager and chaos-daemon

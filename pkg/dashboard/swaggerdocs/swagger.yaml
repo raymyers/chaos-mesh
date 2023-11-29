@@ -28,6 +28,9 @@ definitions:
       listen_port:
         default: 2333
         type: integer
+      oidc_security_mode:
+        default: false
+        type: boolean
       root_path:
         default: http://localhost:2333
         type: string
