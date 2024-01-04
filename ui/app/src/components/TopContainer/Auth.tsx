@@ -29,8 +29,6 @@ import RBACGenerator from 'components/RBACGenerator'
 import i18n from 'components/T'
 import Token from 'components/Token'
 
-import { OidcAuthService } from '../../oidc/OidcAuthService'
-
 interface AuthProps {
   open: boolean
 }
@@ -50,12 +48,7 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
   const handleSubmitCallback = () => navigate(0)
   const handleAuthGCP = () => (window.location.href = '/api/auth/gcp/redirect')
 
-  const handleAuthOIDC = () => {
-    const oidcAuthService = new OidcAuthService()
-    // window.location.href = '/api/auth/oidc/redirect'
-    // default is: login/callback
-    return oidcAuthService.signin()
-  }
+  const handleAuthOIDC = () => (window.location.href = '/api/auth/oidc/redirect')
 
   return (
     <ConfirmDialog
@@ -89,8 +82,8 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
           </Box>
         </>
       )}
-      {config?.oidc_security_mode && (
-        <>
+      {
+        /*{config?.oidc_security_mode &&}*/ <>
           <Divider sx={{ mt: 6, mb: 3, color: 'text.secondary', typography: 'body2' }}>
             {i18n('settings.addToken.or')}
           </Divider>
@@ -100,7 +93,7 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
             </IconButton>
           </Box>
         </>
-      )}
+      }
 
       <ConfirmDialog
         open={tokenGenOpen}

@@ -16,8 +16,6 @@
  */
 import { UserManager, WebStorageStateStore } from 'oidc-client-ts'
 
-import { ConfigChaosDashboardConfig } from '../openapi/index.schemas'
-
 export class OidcAuthService {
   userManager
   userManagerConfig
@@ -26,11 +24,11 @@ export class OidcAuthService {
     this.userManagerConfig = {
       authority: 'authority_uri_here',
       client_id: 'client_id_here', // Okta provided client id
-      redirect_uri: 'http://localhost:3000/login/callback',
+      redirect_uri: 'http://127.0.0.1:63798/login/callback',
       //silent_redirect_uri
       //post_logout_redirect_uri
-      //response_type
-      //scope
+      response_type: 'code',
+      scope: 'openid',
       userStore: new WebStorageStateStore({ store: window.localStorage }),
     }
     this.userManager = new UserManager(this.userManagerConfig)

@@ -24,7 +24,7 @@ require (
 	github.com/containerd/containerd v1.7.0
 	github.com/docker/docker v23.0.3+incompatible
 	github.com/ethereum/go-ethereum v1.12.1
-	github.com/fatih/color v1.13.0
+	github.com/fatih/color v1.14.1
 	github.com/gin-contrib/pprof v1.3.0
 	github.com/gin-gonic/gin v1.9.1
 	github.com/go-logr/logr v1.2.4
@@ -34,6 +34,7 @@ require (
 	github.com/google/uuid v1.3.1
 	github.com/grpc-ecosystem/go-grpc-middleware v1.3.0
 	github.com/grpc-ecosystem/go-grpc-prometheus v1.2.0
+	github.com/hashicorp/cap v0.4.0
 	github.com/hashicorp/golang-lru/v2 v2.0.6
 	github.com/hasura/go-graphql-client v0.2.0
 	github.com/iancoleman/strcase v0.2.0
@@ -125,6 +126,7 @@ require (
 	github.com/containerd/fifo v1.1.0 // indirect
 	github.com/containerd/ttrpc v1.2.2 // indirect
 	github.com/containerd/typeurl/v2 v2.1.0 // indirect
+	github.com/coreos/go-oidc/v3 v3.5.0 // indirect
 	github.com/coreos/go-systemd/v22 v22.5.0 // indirect
 	github.com/cyphar/filepath-securejoin v0.2.4 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
@@ -148,6 +150,7 @@ require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/go-errors/errors v1.4.2 // indirect
 	github.com/go-gorp/gorp/v3 v3.0.5 // indirect
+	github.com/go-jose/go-jose/v3 v3.0.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/go-ole/go-ole v1.2.6 // indirect
 	github.com/go-openapi/jsonpointer v0.19.6 // indirect
@@ -180,7 +183,10 @@ require (
 	github.com/gosuri/uitable v0.0.4 // indirect
 	github.com/gregjones/httpcache v0.0.0-20180305231024-9cad4c3443a7 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
+	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
+	github.com/hashicorp/go-hclog v1.4.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
+	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/golang-lru v1.0.2 // indirect
 	github.com/holiman/uint256 v1.2.3 // indirect
 	github.com/huandu/xstrings v1.4.0 // indirect
