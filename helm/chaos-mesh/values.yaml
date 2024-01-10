@@ -275,6 +275,9 @@ dashboard:
   gcpSecurityMode: false
   gcpClientId: ""
   gcpClientSecret: ""
+  # Enable OpenID Authentication Integration
+  oidcSecurityMode: false
+  oidcClientId: ""
   # Node labels for chaos-dashboard  pod assignment
   nodeSelector: {}
   # Toleration labels for chaos-dashboard pod assignment

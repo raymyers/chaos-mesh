@@ -1759,6 +1759,8 @@ spec:
               value: ""
             - name: GCP_CLIENT_SECRET
               value: ""
+            - name: OIDC_SECURITY_MODE
+              value: "false"
             - name: DNS_SERVER_CREATE
               value: "true"
             - name: ROOT_URL

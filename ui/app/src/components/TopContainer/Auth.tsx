@@ -82,8 +82,9 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
           </Box>
         </>
       )}
-      {
-        /*{config?.oidc_security_mode &&}*/ <>
+      {/* TODO: Refactor these: divider appears if any extra options available, icons appear as needed*/}
+      {config?.oidc_security_mode && (
+        <>
           <Divider sx={{ mt: 6, mb: 3, color: 'text.secondary', typography: 'body2' }}>
             {i18n('settings.addToken.or')}
           </Divider>
@@ -93,7 +94,7 @@ const Auth: React.FC<AuthProps> = ({ open }) => {
             </IconButton>
           </Box>
         </>
-      }
+      )}
 
       <ConfirmDialog
         open={tokenGenOpen}

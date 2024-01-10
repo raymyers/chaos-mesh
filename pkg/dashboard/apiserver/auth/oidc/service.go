@@ -83,9 +83,9 @@ func NewService(
 func Register(r *gin.RouterGroup, s *Service, conf *config.ChaosDashboardConfig) {
 	// If the oidc security mode is not set, just skip the registration
 	// TODO: put this back in once the security mode is set up
-	//if !conf.OidcSecurityMode {
-	//	return
-	//}
+	if !conf.OidcSecurityMode {
+		return
+	}
 
 	r.Use(s.Middleware)
 
