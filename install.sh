@@ -1761,6 +1761,8 @@ spec:
               value: ""
             - name: OIDC_SECURITY_MODE
               value: "false"
+            - name: OIDC_CLIENT_ID
+              value: ""
             - name: DNS_SERVER_CREATE
               value: "true"
             - name: ROOT_URL
