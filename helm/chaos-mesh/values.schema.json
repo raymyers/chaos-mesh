@@ -388,6 +388,12 @@
                 "gcpSecurityMode": {
                     "type": "boolean"
                 },
+                "oidcClientId": {
+                    "type": "string"
+                },
+                "oidcSecurityMode": {
+                    "type": "boolean"
+                },
                 "hostNetwork": {
                     "type": "boolean"
                 },
