@@ -11,10 +11,6 @@ overrides:
 importers:
 
   .:
-    dependencies:
-      oidc-client-ts:
-        specifier: ^2.4.0
-        version: 2.4.0
     devDependencies:
       '@trivago/prettier-plugin-sort-imports':
         specifier: ^4.1.1

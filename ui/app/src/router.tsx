@@ -31,7 +31,6 @@ import { Navigate, createHashRouter } from 'react-router-dom'
 
 import NewWorkflow from 'components/NewWorkflow'
 import NewWorkflowNext from 'components/NewWorkflowNext'
-import OidcSigninCallback from 'components/OIDCSigninCallback'
 import TopContainer from 'components/TopContainer'
 
 const router = createHashRouter([

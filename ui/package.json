@@ -24,8 +24,5 @@
   },
   "lint-staged": {
     "*.(j|t)s?(x)": "prettier --write"
-  },
-  "dependencies": {
-    "oidc-client-ts": "^2.4.0"
   }
 }
